@@ -1,11 +1,20 @@
 import Game.Levels.DemoWorld
+import Game.Levels.LogicForEngineers
 
 -- Here's what we'll put on the title screen
-Title "Hello World Game"
+Title "Logic for Engineers Game"
 Introduction
 "
-This text appears on the starting page where one selects the world/level to play.
-You can use **markdown**.
+# Welcome to Logic for Engineers!
+
+Learn formal logic through the lens of digital circuits.
+If you understand AND, OR, and NOT gates, you already know Boolean logic!
+
+**Worlds available:**
+- **Logic for Engineers**: Master propositional logic using circuit intuition
+- **Demo World**: A sample world from the game template
+
+Select a world to begin your journey into formal proofs!
 "
 
 Info "
@@ -19,8 +28,8 @@ Use **markdown**.
 
 /-! Information to be displayed on the servers landing page. -/
 Languages "en"
-CaptionShort "Game Template"
-CaptionLong "You should use this game as a template for your own game and add your own levels."
+CaptionShort "Logic for Engineers"
+CaptionLong "Learn propositional logic through digital circuit intuition. Master AND, OR, NOT gates as logical proofs!"
 -- Prerequisites "" -- add this if your game depends on other games
 -- CoverImage "images/cover.png"
 
