@@ -64,3 +64,7 @@ Now we can move on to the more complex safety check.
 "
 
 end L01
+
+NewTactic induction
+NewTactic simp
+NewTactic rfl

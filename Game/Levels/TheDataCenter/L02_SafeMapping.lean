@@ -72,3 +72,7 @@ This is the power of formal methods in engineering!
 "
 
 end L02
+
+NewTactic induction
+NewTactic simp
+NewTactic rfl
