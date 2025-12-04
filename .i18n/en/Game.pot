@@ -1,45 +1,932 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-23\n"
+"POT-Creation-Date: 2025-12-04\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit"
 
-#: GameServer.RpcHandlers
-msgid "level completed with warnings… 🎭"
-msgstr ""
-
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "Hello World"
-msgstr ""
-
-#: Game
-msgid "This text appears on the starting page where one selects the world/level to play.\n"
-"You can use **markdown**."
-msgstr ""
-
-#: GameServer.RpcHandlers
-msgid "level completed! 🎉"
-msgstr ""
-
-#: Game
-msgid "Hello World Game"
-msgstr ""
-
-#. §0: `«{g}»`
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You should use §0 now."
+#: Game.Levels.LogicForEngineers.L09_Iff
+msgid "The XNOR Gate"
 msgstr ""
 
 #: GameServer.RpcHandlers
 msgid "intermediate goal solved! 🎉"
 msgstr ""
 
+#. §0: `intro h`
+#: Game.Levels.LogicForEngineers.L02_Implication
+msgid "Use §0 to assume P is true. This moves P from the goal to your hypotheses."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L08_DeMorgan
+msgid "One direction of De Morgan's first law."
+msgstr ""
+
+#. §0: `P ∧ (Q ∨ R)`
+#. §1: `(P ∧ Q) ∨ (P ∧ R)`
+#: Game.Levels.LogicForEngineers.L10_Distributive
+msgid "Great job! You've verified the query optimizer rule!\n"
+"\n"
+"**Performance Impact:**\n"
+"- Original: §0 - Filter *after* Join (Slow)\n"
+"- Optimized: §1 - Filter *before* Join (Fast)\n"
+"\n"
+"You just saved the dashboard from timing out. The intern is impressed."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L03_AndIntro
+msgid "If P and Q are both true, then P ∧ Q is true."
+msgstr ""
+
+#. §0: `h : ¬P ∨ ¬Q`
+#. §1: `hpq : P ∧ Q`
+#. §2: `cases h`
+#: Game.Levels.LogicForEngineers.L08_DeMorgan
+msgid "You have §0 and §1. Use §2 to handle both possibilities."
+msgstr ""
+
+#. §0: `Q`
+#. §1: `h : P ∧ Q`
+#. §2: `exact h.right`
+#: Game.Levels.LogicForEngineers.L04_AndElim
+msgid "You need to prove §0. You have §1.\n"
+"Use §2 to extract Q from the AND."
+msgstr ""
+
+#. §0: `hp : P`
+#: Game.Levels.LogicForEngineers.L03_AndIntro
+msgid "Now prove the first part. You have §0 in your hypotheses."
+msgstr ""
+
+#. §0: `intro h`
+#: Game.Levels.LogicForEngineers.L08_DeMorgan
+msgid "First introduce the hypothesis with §0."
+msgstr ""
+
+#. §0: `intro h`
+#: Game.Levels.LogicForEngineers.L10_Distributive
+msgid "Start with §0 to assume the unoptimized query structure."
+msgstr ""
+
+#. §0: `left`
+#. §1: `left`
+#. §2: `right`
+#: Game.Levels.LogicForEngineers.L05_OrIntro
+msgid "You've learned OR introduction from the left!\n"
+"\n"
+"The §0 tactic says 'I choose to prove the left side of the OR'.\n"
+"\n"
+"**Note:** Once you commit to §1 or §2, you only need to prove that one side.\n"
+"This is different from AND where you must prove both!"
+msgstr ""
+
+#. §0: `P ↔ Q`
+#. §1: `intro h`
+#: Game.Levels.LogicForEngineers.L09_Iff
+msgid "First, assume §0 is true with §1."
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "level completed with warnings… 🎭"
+msgstr ""
+
+#. §0: `Q → P`
+#. §1: `h : P ↔ Q`
+#. §2: `h.mpr`
+#. §3: `Q → P`
+#. §4: `exact h.mpr`
+#: Game.Levels.LogicForEngineers.L09_Iff
+msgid "You need §0. You have §1.\n"
+"Use §2 to get the §3 direction, then §4."
+msgstr ""
+
+#. §0: `hnp : ¬P`
+#. §1: `hpq : P ∧ Q`
+#. §2: `hpq.left`
+#: Game.Levels.LogicForEngineers.L08_DeMorgan
+msgid "You have §0 and §1.\n"
+"Extract P from hpq with §2, then apply ¬P to it."
+msgstr ""
+
+#. §0: `constructor`
+#. §1: `P ∧ Q`
+#. §2: `P`
+#. §3: `Q`
+#: Game.Levels.LogicForEngineers.L03_AndIntro
+msgid "Use §0 to split the goal §1 into two separate goals: §2 and §3."
+msgstr ""
+
+#. §0: `(my_map f tail).length + 1 = tail.length + 1`
+#. §1: `(my_map f tail).length = tail.length`
+#. §2: `ih`
+#. §3: `exact ih`
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "Now the goal looks like §0.\n"
+"We know §1 from §2.\n"
+"Use §3 to finish the proof."
+msgstr ""
+
+#. §0: `¬P`
+#. §1: `¬P`
+#. §2: `P → False`
+#. §3: `¬P`
+#. §4: `intro h`
+#. §5: `False`
+#. §6: `h : P`
+#. §7: `hn : ¬P`
+#. §8: `hn h`
+#. §9: `False`
+#. §10: `False.elim`
+#. §11: `False`
+#: Game.Levels.LogicForEngineers.L07_NotGate
+msgid "# NOT: Negation\n"
+"\n"
+"A **NOT gate** (inverter) flips the signal: HIGH becomes LOW, LOW becomes HIGH.\n"
+"\n"
+"In logic, §0 (read 'not P') means P is false.\n"
+"\n"
+"**Key insight:** In Lean, §1 is *defined* as §2.\n"
+"This means: 'if P were true, we'd have a contradiction'.\n"
+"\n"
+"To prove §3:\n"
+"1. Use §4 to assume P is true\n"
+"2. Derive §5 from that assumption\n"
+"\n"
+"If you have both §6 and §7, you have a contradiction!\n"
+"- §8 gives you §9 (applying ¬P to P)\n"
+"- §10 converts §11 into any proposition"
+msgstr ""
+
+#. §0: `my_map`
+#. §1: `rfl`
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "Base Case: The list is empty. §0 returns empty, and length is 0.\n"
+"This should be true by definition. Type §1."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L05_OrIntro
+msgid "The OR Gate"
+msgstr ""
+
+#. §0: `L`
+#. §1: `induction L with head tail ih`
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "We need to prove this for *any* list §0. This suggests induction.\n"
+"Type §1."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L04_AndElim
+msgid "AND is commutative: P ∧ Q implies Q ∧ P."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L05_OrIntro
+msgid "Now just prove P using your hypothesis."
+msgstr ""
+
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "Safe Mapping"
+msgstr ""
+
+#. §0: `map`
+#. §1: ```lean
+#. def my_map (f : α → β) : List α → List β
+#. | [] => []
+#. | (h :: t) => (f h) :: (my_map f t)
+#. ```
+#. §2: `my_map`
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "# The Memory Leak: Safe Mapping\n"
+"\n"
+"Great job verifying the identity property!\n"
+"Now for the real challenge.\n"
+"\n"
+"The junior engineer implemented a custom §0 function for our high-performance list processing library.\n"
+"However, there's a concern that it might be corrupting memory by changing the size of the list during transformation.\n"
+"\n"
+"If the output list length doesn't match the input list length, we get a buffer overflow in the C++ backend.\n"
+"\n"
+"**The Code:**\n"
+"§1\n"
+"\n"
+"**Your Task:**\n"
+"Perform a formal code review. Prove that §2 preserves the length of the list."
+msgstr ""
+
+#. §0: `P ∨ Q`
+#. §1: `P ∨ Q`
+#. §2: `left`
+#. §3: `P`
+#. §4: `right`
+#. §5: `Q`
+#: Game.Levels.LogicForEngineers.L05_OrIntro
+msgid "# OR: At Least One Must Be True\n"
+"\n"
+"An **OR gate** outputs HIGH when *at least one* input is HIGH.\n"
+"\n"
+"In logic, §0 (read 'P or Q') is true when at least one of P or Q is true.\n"
+"\n"
+"To prove §1, you only need to prove ONE side:\n"
+"- Use §2 if you can prove §3\n"
+"- Use §4 if you can prove §5\n"
+"\n"
+"You're essentially choosing which input to connect to HIGH."
+msgstr ""
+
+#. §0: `trivial`
+#: Game.Levels.LogicForEngineers.L01_TrueIsTrue
+msgid "Excellent! You've completed your first proof.\n"
+"\n"
+"The §0 tactic works when the goal is obviously true.\n"
+"In circuit terms, you just verified that a wire connected to VCC is indeed HIGH.\n"
+"\n"
+"Let's move on to something more interesting!"
+msgstr ""
+
+#. §0: `P ∨ Q`
+#. §1: `intro h`
+#: Game.Levels.LogicForEngineers.L06_OrElim
+msgid "First, assume §0 is true using §1."
+msgstr ""
+
+#. §0: `my_map id []`
+#. §1: `[]`
+#. §2: `rfl`
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "Base Case: §0.\n"
+"By definition, this is §1.\n"
+"Type §2."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L09_Iff
+msgid "If and only if is symmetric."
+msgstr ""
+
+#. §0: `P ∧ (Q ∨ R)`
+#. §1: `Q`
+#. §2: `R`
+#. §3: `P`
+#. §4: `Q`
+#. §5: `R`
+#. §6: `(P ∧ Q) ∨ (P ∧ R)`
+#: Game.Levels.LogicForEngineers.L10_Distributive
+msgid "# Query Optimization: The Distributive Law\n"
+"\n"
+"The intern wrote a query that is causing a massive slowdown in our analytics dashboard.\n"
+"They are filtering a join like this: §0.\n"
+"\n"
+"This forces the database to join §1 and §2 first, creating a huge intermediate table, and *then* filter by §3.\n"
+"\n"
+"If we distribute the filter, we can filter §4 and §5 *before* joining:\n"
+"§6\n"
+"\n"
+"This is a classic query optimization technique!\n"
+"\n"
+"Your task: Prove to the intern that this optimization is safe (logically equivalent)."
+msgstr ""
+
+#. §0: `P ↔ Q`
+#. §1: `P ↔ Q`
+#. §2: `P ↔ Q`
+#. §3: `constructor`
+#. §4: `P → Q`
+#. §5: `Q → P`
+#. §6: `h : P ↔ Q`
+#. §7: `h.mp`
+#. §8: `P → Q`
+#. §9: `h.mpr`
+#. §10: `Q → P`
+#: Game.Levels.LogicForEngineers.L09_Iff
+msgid "# Biconditional: If and Only If\n"
+"\n"
+"The **XNOR gate** (exclusive NOR) outputs HIGH when both inputs are the same.\n"
+"In logic, this is the **biconditional** §0 (read 'P if and only if Q').\n"
+"\n"
+"§1 means:\n"
+"- If P is true, then Q is true (P → Q)\n"
+"- If Q is true, then P is true (Q → P)\n"
+"\n"
+"It's essentially two implications in both directions!\n"
+"\n"
+"To prove §2:\n"
+"- Use §3 to split into two goals: §4 and §5\n"
+"- Prove each direction separately\n"
+"\n"
+"To use §6:\n"
+"- §7 (modus ponens): gives you §8\n"
+"- §9 (modus ponens reverse): gives you §10"
+msgstr ""
+
+#. §0: `↔`
+#. §1: `\\iff`
+#. §2: `\\leftrightarrow`
+#. §3: `constructor`
+#. §4: `.mp`
+#. §5: `.mpr`
+#: Game.Levels.LogicForEngineers.L09_Iff
+msgid "Wonderful! You've shown that biconditional is symmetric.\n"
+"\n"
+"**The §0 symbol:**\n"
+"- Typed as §1 or §2\n"
+"- §3 splits it into two implication goals\n"
+"- §4 extracts the forward direction (P → Q)\n"
+"- §5 extracts the reverse direction (Q → P)\n"
+"\n"
+"In circuits, XNOR is the 'equality detector' - it's HIGH when both inputs match!"
+msgstr ""
+
+#. §0: `P → Q`
+#. §1: `P → P`
+#. §2: `P → Q`
+#. §3: `intro h`
+#. §4: `P`
+#. §5: `h`
+#. §6: `Q`
+#. §7: `exact h`
+#: Game.Levels.LogicForEngineers.L02_Implication
+msgid "# Implication: If...Then\n"
+"\n"
+"In circuits, a buffer gate passes the input signal through unchanged.\n"
+"In logic, an **implication** §0 means 'if P is true, then Q is true'.\n"
+"\n"
+"The simplest implication is §1 - if the input is true, the output is true.\n"
+"This is like a buffer: what goes in, comes out.\n"
+"\n"
+"To prove an implication §2:\n"
+"1. Use §3 to assume §4 is true (calling this assumption §5)\n"
+"2. Then prove §6 using that assumption\n"
+"\n"
+"When you have exactly what you need to prove, use §7 to finish."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L03_AndIntro
+msgid "The AND Gate"
+msgstr ""
+
+#. §0: `P ∧ Q`
+#. §1: `left`
+#. §2: `constructor`
+#: Game.Levels.LogicForEngineers.L10_Distributive
+msgid "In this case, we are in the left branch (Q). Build the optimized left side §0.\n"
+"Use §1 then §2."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L10_Distributive
+msgid "Query Optimization"
+msgstr ""
+
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "The Identity Crisis"
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L07_NotGate
+msgid "From P and ¬P, we can prove anything."
+msgstr ""
+
+#. §0: `trivial`
+#. §1: `intro`
+#. §2: `exact`
+#. §3: `constructor`
+#. §4: `.left`
+#. §5: `.right`
+#. §6: `left`
+#. §7: `right`
+#. §8: `cases`
+#. §9: `¬P`
+#. §10: `P → False`
+#: Game.Levels.LogicForEngineers.L08_DeMorgan
+msgid "Congratulations! You've proven part of De Morgan's Law!\n"
+"\n"
+"This is exactly how digital circuit designers think:\n"
+"- A NAND gate (¬(P ∧ Q)) outputs LOW only when both inputs are HIGH\n"
+"- An OR of NOTs (¬P ∨ ¬Q) outputs HIGH when at least one input is LOW\n"
+"- These are logically equivalent!\n"
+"\n"
+"**What you've learned:**\n"
+"- §0 - prove something obviously true\n"
+"- §1 - assume the hypothesis of an implication\n"
+"- §2 - finish with an exact match\n"
+"- §3 - split an AND goal into two goals\n"
+"- §4, §5 - extract from an AND hypothesis\n"
+"- §6, §7 - choose which side of OR to prove\n"
+"- §8 - handle OR hypotheses by considering both cases\n"
+"- Understanding §9 as §10"
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L01_TrueIsTrue
+msgid "Prove that True is true."
+msgstr ""
+
+#. §0: `P`
+#. §1: `exact h.left`
+#: Game.Levels.LogicForEngineers.L04_AndElim
+msgid "You need to prove §0. Use §1 to extract P from the AND."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L06_OrElim
+msgid "Case Analysis on OR"
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L07_NotGate
+msgid "The NOT Gate"
+msgstr ""
+
+#. §0: `L`
+#. §1: `induction L with head tail ih`
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "Just like in the previous level, we need to prove this for *any* list §0.\n"
+"This is a job for induction!\n"
+"Type §1."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L06_OrElim
+msgid "OR is commutative: P ∨ Q implies Q ∨ P."
+msgstr ""
+
+#. §0: `h.left`
+#. §1: `h.1`
+#. §2: `h.right`
+#. §3: `h.2`
+#: Game.Levels.LogicForEngineers.L04_AndElim
+msgid "Excellent! You've proven that AND is commutative.\n"
+"\n"
+"**Extracting from AND:**\n"
+"- §0 or §1 - get the first component\n"
+"- §2 or §3 - get the second component\n"
+"\n"
+"In circuit terms, if an AND gate outputs 1, both inputs must be 1.\n"
+"You can 'read' either input!"
+msgstr ""
+
+#. §0: `P → Q`
+#. §1: `exact h.mp`
+#: Game.Levels.LogicForEngineers.L09_Iff
+msgid "You need §0. Use §1."
+msgstr ""
+
+#. §0: `¬P`
+#. §1: `P → False`
+#. §2: `hnp : ¬P`
+#. §3: `hp : P`
+#. §4: `hnp hp : False`
+#. §5: `False`
+#. §6: `¬`
+#. §7: `\\not`
+#. §8: `\\neg`
+#: Game.Levels.LogicForEngineers.L07_NotGate
+msgid "This is the principle of **explosion** (ex falso quodlibet):\n"
+"from a contradiction, you can prove anything!\n"
+"\n"
+"**Understanding ¬P:**\n"
+"- §0 is just shorthand for §1\n"
+"- If you have §2 and §3, then §4\n"
+"- From §5, any proposition follows\n"
+"\n"
+"**Notation:** §6 is typed as §7 or §8\n"
+"\n"
+"In circuits, if you somehow have a signal that's both HIGH and LOW,\n"
+"something is very wrong - and anything could happen!"
+msgstr ""
+
+#: Game.Levels.LogicForEngineers
 #: Game
-msgid "You should use this game as a template for your own game and add your own levels."
+msgid "Logic for Engineers"
+msgstr ""
+
+#. §0: `my_map`
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "**Identity Verified!**\n"
+"\n"
+"You've confirmed that §0 behaves correctly for the simplest case.\n"
+"Now we can move on to the more complex safety check."
+msgstr ""
+
+#. §0: `hp : P`
+#. §1: `hnp : ¬P`
+#. §2: `¬P`
+#. §3: `P → False`
+#. §4: `hnp`
+#. §5: `hp`
+#. §6: `False`
+#. §7: `exact False.elim (hnp hp)`
+#: Game.Levels.LogicForEngineers.L07_NotGate
+msgid "You have both §0 and §1.\n"
+"Since §2 means §3, applying §4 to §5 gives §6.\n"
+"Use §7 to derive any proposition from False!"
+msgstr ""
+
+#. §0: `True`
+#. §1: `∧`
+#. §2: `∨`
+#. §3: `¬`
+#. §4: `↔`
+#: Game.Levels.LogicForEngineers
+msgid "# Welcome to Logic for Engineers!\n"
+"\n"
+"If you've worked with digital circuits, you already understand Boolean logic:\n"
+"- **AND gates** output HIGH when both inputs are HIGH\n"
+"- **OR gates** output HIGH when at least one input is HIGH\n"
+"- **NOT gates** flip the signal\n"
+"\n"
+"In this world, you'll learn to *prove* logical statements using the same concepts.\n"
+"Instead of building circuits, you'll build proofs!\n"
+"\n"
+"**What you'll learn:**\n"
+"- Level 1: The §0 proposition (like VCC - always HIGH)\n"
+"- Level 2: Implications (the buffer gate)\n"
+"- Level 3-4: AND (§1) - introduction and elimination\n"
+"- Level 5-6: OR (§2) - introduction and elimination\n"
+"- Level 7: NOT (§3) - negation and contradiction\n"
+"- Level 8: De Morgan's Laws (NAND and NOR equivalences)\n"
+"- Level 9: Biconditional (§4) - the XNOR gate\n"
+"- Level 10: Query Optimization - database efficiency\n"
+"\n"
+"Let's start with something simple and build up to proving real logic identities!"
+msgstr ""
+
+#. §0: `¬(P ∧ Q)`
+#. §1: `P ∧ Q → False`
+#. §2: `intro hpq`
+#. §3: `P ∧ Q`
+#: Game.Levels.LogicForEngineers.L08_DeMorgan
+msgid "Now you need to prove §0. Remember, this means §1.\n"
+"Use §2 to assume §3 is true."
+msgstr ""
+
+#. §0: `intro h`
+#. §1: `→`
+#. §2: `h`
+#. §3: `exact h`
+#. §4: `h`
+#. §5: `intro`
+#. §6: `exact`
+#: Game.Levels.LogicForEngineers.L02_Implication
+msgid "Perfect! You just proved the logical equivalent of a buffer gate.\n"
+"\n"
+"**Key tactics learned:**\n"
+"- §0 - Assume the left side of §1 is true, calling it §2\n"
+"- §3 - Use hypothesis §4 when it matches the goal exactly\n"
+"\n"
+"The pattern §5 then §6 is fundamental - you'll use it constantly!"
+msgstr ""
+
+#. §0: `hq : Q`
+#. §1: `Q ∨ P`
+#. §2: `left`
+#. §3: `exact hq`
+#: Game.Levels.LogicForEngineers.L06_OrElim
+msgid "In this case, Q is true (you have §0). You need §1.\n"
+"Since you have Q, use §2 then §3."
+msgstr ""
+
+#. §0: `h : P`
+#. §1: `P`
+#. §2: `exact h`
+#: Game.Levels.LogicForEngineers.L02_Implication
+msgid "Now you have §0 in your hypotheses, and you need to prove §1.\n"
+"Use §2 to say 'this is exactly what we need'."
+msgstr ""
+
+#. §0: `cases`
+#. §1: `h : P ∨ Q`
+#. §2: ```
+#. cases h with
+#. | inl hp => -- handle case where P is true
+#. | inr hq => -- handle case where Q is true
+#. ```
+#: Game.Levels.LogicForEngineers.L06_OrElim
+msgid "Brilliant! You've mastered OR elimination.\n"
+"\n"
+"The §0 tactic is essential for handling hypotheses with multiple possibilities.\n"
+"When you have §1, you must prove your goal in *both* cases:\n"
+"- What if P is true?\n"
+"- What if Q is true?\n"
+"\n"
+"**Pattern:**\n"
+"§2"
+msgstr ""
+
+#. §0: `P ∨ Q`
+#. §1: `cases h with | inl hp => ... | inr hq => ...`
+#. §2: `hp`
+#. §3: `hq`
+#. §4: `P ∨ Q → Q ∨ P`
+#: Game.Levels.LogicForEngineers.L06_OrElim
+msgid "# Handling OR in Hypotheses\n"
+"\n"
+"When you *have* §0 as a hypothesis, you don't know which one is true.\n"
+"You must handle both cases!\n"
+"\n"
+"Use §1 to split into:\n"
+"- Case 1: assume P is true (called §2)\n"
+"- Case 2: assume Q is true (called §3)\n"
+"\n"
+"This is like testing a circuit: if the OR gate outputs HIGH,\n"
+"you check what happens if input A is HIGH, then what happens if input B is HIGH.\n"
+"\n"
+"Let's prove OR is commutative: §4"
+msgstr ""
+
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "Prove that mapping the identity function returns the original list."
+msgstr ""
+
+#: Game
+msgid "Logic for Engineers Game"
+msgstr ""
+
+#. §0: `my_map`
+#. §1: `id`
+#. §2: ```lean
+#. def my_map (f : α → β) : List α → List β
+#. | [] => []
+#. | (h :: t) => (f h) :: (my_map f t)
+#. ```
+#. §3: `my_map id L = L`
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "# The Identity Crisis\n"
+"\n"
+"Before we tackle the memory leak, we need to verify the basics of our §0 function.\n"
+"The simplest property is that mapping the identity function §1 over a list should return the same list.\n"
+"\n"
+"If this fails, our map function is fundamentally broken.\n"
+"\n"
+"**The Code:**\n"
+"§2\n"
+"\n"
+"**Your Task:**\n"
+"Prove that §3."
+msgstr ""
+
+#. §0: `constructor`
+#. §1: `Q ∧ P`
+#: Game.Levels.LogicForEngineers.L04_AndElim
+msgid "Now use §0 to prove §1 by proving both parts."
+msgstr ""
+
+#. §0: `constructor`
+#. §1: `Q ↔ P`
+#: Game.Levels.LogicForEngineers.L09_Iff
+msgid "Now use §0 to prove both directions of §1."
+msgstr ""
+
+#. §0: `h : P ∧ (Q ∨ R)`
+#. §1: `P`
+#. §2: `h.left`
+#. §3: `Q ∨ R`
+#. §4: `h.right`
+#. §5: `cases h.right`
+#: Game.Levels.LogicForEngineers.L10_Distributive
+msgid "You have §0. Extract the common filter §1 with §2 and the join §3 with §4.\n"
+"Use §5 to handle the two branches of the join."
+msgstr ""
+
+#. §0: `True`
+#. §1: `⊢`
+#. §2: `True`
+#. §3: `trivial`
+#: Game.Levels.LogicForEngineers.L01_TrueIsTrue
+msgid "# Welcome to Logic for Engineers!\n"
+"\n"
+"In digital circuits, we work with signals that are either HIGH (1) or LOW (0).\n"
+"In logic, we work with propositions that are either **True** or **False**.\n"
+"\n"
+"In Lean, §0 is the simplest proposition - it's always provable.\n"
+"Think of it as a wire that's always connected to power.\n"
+"\n"
+"Your goal appears below the line §1. Right now, you need to prove §2.\n"
+"\n"
+"Use the §3 tactic to prove something that is... trivially true!"
+msgstr ""
+
+#. §0: `ih`
+#. §1: `(my_map f tail).length = tail.length`
+#. §2: `(my_map f (head :: tail)).length = (head :: tail).length`
+#. §3: `my_map`
+#. §4: `simp [my_map]`
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "Recursive Case: We have a head and a tail.\n"
+"The Induction Hypothesis §0 says: §1.\n"
+"We want to prove: §2.\n"
+"\n"
+"First, simplify the goal using the definition of §3. Type §4."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L02_Implication
+msgid "The Implication Gate"
+msgstr ""
+
+#. §0: `P ∧ R`
+#. §1: `right`
+#. §2: `constructor`
+#: Game.Levels.LogicForEngineers.L10_Distributive
+msgid "In this case, we are in the right branch (R). Build the optimized right side §0.\n"
+"Use §1 then §2."
+msgstr ""
+
+#. §0: `intro h`
+#. §1: `P ∧ Q`
+#: Game.Levels.LogicForEngineers.L04_AndElim
+msgid "First, use §0 to assume §1 is true."
+msgstr ""
+
+#: Game.Levels.TheDataCenter
+msgid "The Data Center"
+msgstr ""
+
+#. §0: `P ∧ Q`
+#. §1: `h.left`
+#. §2: `h.1`
+#. §3: `P`
+#. §4: `h.right`
+#. §5: `h.2`
+#. §6: `Q`
+#. §7: `P ∧ Q → Q ∧ P`
+#: Game.Levels.LogicForEngineers.L04_AndElim
+msgid "# Extracting from AND\n"
+"\n"
+"If you know §0 is true, you can extract either piece:\n"
+"- §1 or §2 gives you §3\n"
+"- §4 or §5 gives you §6\n"
+"\n"
+"Think of it as probing the inputs of an AND gate that's outputting HIGH -\n"
+"you know both inputs must be HIGH.\n"
+"\n"
+"This level proves AND is commutative: §7\n"
+"(swapping the inputs doesn't change the logic)."
+msgstr ""
+
+#: Game
+msgid "# Welcome to Logic for Engineers!\n"
+"\n"
+"Learn formal logic through the lens of digital circuits.\n"
+"If you understand AND, OR, and NOT gates, you already know Boolean logic!\n"
+"\n"
+"**Worlds available:**\n"
+"- **Logic for Engineers**: Master propositional logic using circuit intuition\n"
+"- **The Data Center**: Verify data structures and prevent memory leaks\n"
+"\n"
+"Select a world to begin your journey into formal proofs!"
+msgstr ""
+
+#: Game
+msgid "Learn propositional logic through digital circuit intuition. Master AND, OR, NOT gates as logical proofs!"
+msgstr ""
+
+#: GameServer.RpcHandlers
+msgid "level completed! 🎉"
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L08_DeMorgan
+msgid "De Morgan's Laws"
+msgstr ""
+
+#. §0: `P ∧ Q`
+#. §1: `constructor`
+#. §2: `∧`
+#. §3: `\\and`
+#. §4: `\\wedge`
+#: Game.Levels.LogicForEngineers.L03_AndIntro
+msgid "You've built an AND gate!\n"
+"\n"
+"When you see §0 as a goal, use §1 to split it into two goals.\n"
+"Then prove each part using what you have.\n"
+"\n"
+"**Notation guide:**\n"
+"- §2 is typed as §3 or §4\n"
+"- It represents logical AND (conjunction)"
+msgstr ""
+
+#. §0: `hnq : ¬Q`
+#. §1: `hpq : P ∧ Q`
+#. §2: `hpq.right`
+#: Game.Levels.LogicForEngineers.L08_DeMorgan
+msgid "You have §0 and §1.\n"
+"Extract Q from hpq with §2, then apply ¬Q to it."
+msgstr ""
+
+#. §0: `id head :: my_map id tail`
+#. §1: `id head = head`
+#. §2: `id`
+#. §3: `my_map id tail = tail`
+#. §4: `ih`
+#. §5: `head :: tail = head :: tail`
+#. §6: `exact ih`
+#. §7: `rfl`
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "Now we have §0.\n"
+"We know §1 (by definition of §2) and §3 (by §4).\n"
+"So the goal is §5.\n"
+"Type §6 or just §7."
+msgstr ""
+
+#: Game.Levels.TheDataCenter
+msgid "# Welcome to The Data Center\n"
+"\n"
+"You've mastered the logic gates. Now it's time to touch the metal.\n"
+"In this world, you will apply your logical skills to verify actual data structures.\n"
+"\n"
+"We are moving from Propositional Logic (True/False) to Functional Programming (Lists, Recursion).\n"
+"\n"
+"**Your Goal:**\n"
+"Prevent the next major outage by formally verifying critical system functions."
+msgstr ""
+
+#. §0: `my_map id (head :: tail)`
+#. §1: `my_map`
+#. §2: `simp [my_map]`
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "Recursive Case: §0.\n"
+"Simplify using the definition of §1.\n"
+"Type §2."
+msgstr ""
+
+#. §0: `¬(P ∧ Q) ↔ ¬P ∨ ¬Q`
+#. §1: `¬(P ∨ Q) ↔ ¬P ∧ ¬Q`
+#. §2: `¬P ∨ ¬Q`
+#. §3: `¬(P ∧ Q)`
+#. §4: `apply`
+#. §5: `B`
+#. §6: `h : A → B`
+#. §7: `apply h`
+#. §8: `A`
+#: Game.Levels.LogicForEngineers.L08_DeMorgan
+msgid "# De Morgan's Laws: The Engineer's Best Friend\n"
+"\n"
+"**De Morgan's Laws** are fundamental in digital logic:\n"
+"- §0 (NAND equals OR of NOTs)\n"
+"- §1 (NOR equals AND of NOTs)\n"
+"\n"
+"Let's prove the easier direction of the first law:\n"
+"If we know §2, then §3.\n"
+"\n"
+"Think about it: if at least one input to an AND gate is LOW,\n"
+"the output must be LOW!\n"
+"\n"
+"**New tactic:** §4 lets you work backwards from the goal.\n"
+"If you need to prove §5 and have §6, use §7 to change\n"
+"the goal to proving §8."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L05_OrIntro
+msgid "If P is true, then P ∨ Q is true."
+msgstr ""
+
+#. §0: `my_map`
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "**Code Review Passed!**\n"
+"\n"
+"You have formally verified that §0 is memory-safe with respect to list length.\n"
+"The C++ backend team breathes a sigh of relief.\n"
+"\n"
+"You've just used **Mathematical Induction** to verify software correctness.\n"
+"This is the power of formal methods in engineering!"
+msgstr ""
+
+#. §0: `cases h with | inl hp => ... | inr hq => ...`
+#. §1: `cases h`
+#: Game.Levels.LogicForEngineers.L06_OrElim
+msgid "Now use §0 to handle both possibilities.\n"
+"\n"
+"Or simply use §1 and handle each case."
+msgstr ""
+
+#. §0: `trivial`
+#. §1: `True`
+#: Game.Levels.LogicForEngineers.L01_TrueIsTrue
+msgid "Type §0 to prove that §1 holds."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L10_Distributive
+msgid "One direction of the distributive law."
+msgstr ""
+
+#. §0: `P ∧ Q`
+#. §1: `P ∧ Q`
+#. §2: `constructor`
+#: Game.Levels.LogicForEngineers.L03_AndIntro
+msgid "# AND: Both Must Be True\n"
+"\n"
+"An **AND gate** outputs HIGH only when *both* inputs are HIGH.\n"
+"\n"
+"In logic, §0 (read 'P and Q') is true only when both P and Q are true.\n"
+"\n"
+"To prove §1, you need to prove both parts:\n"
+"- Use §2 to split the goal into two subgoals\n"
+"- Prove each part separately\n"
+"\n"
+"Think of it as connecting two wires to an AND gate - you need to verify both inputs."
+msgstr ""
+
+#: Game.Levels.LogicForEngineers.L02_Implication
+msgid "If P is true, then P is true."
+msgstr ""
+
+#. §0: `hq : Q`
+#: Game.Levels.LogicForEngineers.L03_AndIntro
+msgid "Now prove the second part. You have §0 in your hypotheses."
 msgstr ""
 
 #: Game
@@ -51,30 +938,31 @@ msgid "Here you can put additional information about the game. It is accessible\
 "Use **markdown**."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This last message appears if the level is solved."
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "Prove that mapping a function over a list does not change its length."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+#: Game.Levels.LogicForEngineers.L01_TrueIsTrue
+msgid "True is True"
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "This introduction is shown before one enters level 1 of the demo world. Use markdown."
+#. §0: `hp : P`
+#. §1: `Q ∨ P`
+#. §2: `right`
+#. §3: `exact hp`
+#: Game.Levels.LogicForEngineers.L06_OrElim
+msgid "In this case, P is true (you have §0). You need §1.\n"
+"Since you have P, use §2 then §3."
 msgstr ""
 
-#. §0: `«{h}»`
-#. §1: `«{g}»`
-#: Game.Levels.DemoWorld.L01_HelloWorld
-msgid "You can either start using §0 or §1."
+#. §0: `P ∨ Q`
+#. §1: `hp : P`
+#. §2: `left`
+#: Game.Levels.LogicForEngineers.L05_OrIntro
+msgid "You need to prove §0. You have §1.\n"
+"Use §2 to say 'I'll prove the left side (P)'."
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "Demo World"
-msgstr ""
-
-#: Game
-msgid "Game Template"
+#: Game.Levels.LogicForEngineers.L04_AndElim
+msgid "Reading AND Outputs"
 msgstr ""

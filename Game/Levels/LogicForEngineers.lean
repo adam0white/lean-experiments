@@ -31,7 +31,7 @@ Instead of building circuits, you'll build proofs!
 - Level 7: NOT (`¬`) - negation and contradiction
 - Level 8: De Morgan's Laws (NAND and NOR equivalences)
 - Level 9: Biconditional (`↔`) - the XNOR gate
-- Level 10: Distributive Law - circuit optimization
+- Level 10: Query Optimization - database efficiency
 
 Let's start with something simple and build up to proving real logic identities!
 "

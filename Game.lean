@@ -1,5 +1,5 @@
-import Game.Levels.DemoWorld
 import Game.Levels.LogicForEngineers
+import Game.Levels.TheDataCenter
 
 -- Here's what we'll put on the title screen
 Title "Logic for Engineers Game"
@@ -12,7 +12,7 @@ If you understand AND, OR, and NOT gates, you already know Boolean logic!
 
 **Worlds available:**
 - **Logic for Engineers**: Master propositional logic using circuit intuition
-- **Demo World**: A sample world from the game template
+- **The Data Center**: Verify data structures and prevent memory leaks
 
 Select a world to begin your journey into formal proofs!
 "
