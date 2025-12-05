@@ -43,7 +43,7 @@ Statement map_preserves_length (f : α → β) (L : List α) :
   (my_map f L).length = L.length := by
   Hint "Just like in the previous level, we need to prove this for *any* list `L`.
 This is a job for induction!
-Type `induction L with head tail ih`."
+Type `induction L`."
   induction L with
   | nil =>    -- Base case: Empty list
     Hint "Base Case: The list is empty. `my_map` returns empty, and length is 0.
@@ -58,8 +58,8 @@ First, simplify the goal using the definition of `my_map`. Type `simp [my_map]`.
     simp [my_map]         -- Simplify using the definition
     Hint "Now the goal looks like `(my_map f tail).length + 1 = tail.length + 1`.
 We know `(my_map f tail).length = tail.length` from `ih`.
-Use `exact ih` to finish the proof."
-    exact ih              -- Use the "Induction Hypothesis"
+Use `rw [ih]` to replace the left side with the right side."
+    rw [ih]              -- Use the "Induction Hypothesis"
 
 Conclusion "
 **Code Review Passed!**
@@ -73,6 +73,4 @@ This is the power of formal methods in engineering!
 
 end L02
 
-NewTactic induction
-NewTactic simp
-NewTactic rfl
+NewTactic induction simp rfl rw

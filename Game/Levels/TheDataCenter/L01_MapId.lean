@@ -38,11 +38,12 @@ def my_map (f : α → β) : List α → List β
 Statement map_id (L : List α) :
   my_map id L = L := by
   Hint "We need to prove this for *any* list `L`. This suggests induction.
-Type `induction L with head tail ih`."
+Type `induction L`."
   induction L with
   | nil =>
     Hint "Base Case: `my_map id []`.
 By definition, this is `[]`.
+This is true by definition (reflexivity).
 Type `rfl`."
     rfl
   | cons head tail ih =>
@@ -53,8 +54,9 @@ Type `simp [my_map]`."
     Hint "Now we have `id head :: my_map id tail`.
 We know `id head = head` (by definition of `id`) and `my_map id tail = tail` (by `ih`).
 So the goal is `head :: tail = head :: tail`.
-Type `exact ih` or just `rfl`."
-    exact ih
+Use the induction hypothesis `ih` to rewrite the goal.
+Type `rw [ih]`."
+    rw [ih]
 
 Conclusion "
 **Identity Verified!**
@@ -65,6 +67,4 @@ Now we can move on to the more complex safety check.
 
 end L01
 
-NewTactic induction
-NewTactic simp
-NewTactic rfl
+NewTactic induction simp rfl rw

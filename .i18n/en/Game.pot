@@ -16,6 +16,13 @@ msgstr ""
 msgid "intermediate goal solved! 🎉"
 msgstr ""
 
+#. §0: `L1`
+#. §1: `induction L1`
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "We want to prove this for any list §0.\n"
+"Type §1."
+msgstr ""
+
 #. §0: `intro h`
 #: Game.Levels.LogicForEngineers.L02_Implication
 msgid "Use §0 to assume P is true. This moves P from the goal to your hypotheses."
@@ -111,22 +118,22 @@ msgid "You have §0 and §1.\n"
 "Extract P from hpq with §2, then apply ¬P to it."
 msgstr ""
 
+#. §0: `(my_map f tail).length + 1 = tail.length + 1`
+#. §1: `(my_map f tail).length = tail.length`
+#. §2: `ih`
+#. §3: `rw [ih]`
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "Now the goal looks like §0.\n"
+"We know §1 from §2.\n"
+"Use §3 to replace the left side with the right side."
+msgstr ""
+
 #. §0: `constructor`
 #. §1: `P ∧ Q`
 #. §2: `P`
 #. §3: `Q`
 #: Game.Levels.LogicForEngineers.L03_AndIntro
 msgid "Use §0 to split the goal §1 into two separate goals: §2 and §3."
-msgstr ""
-
-#. §0: `(my_map f tail).length + 1 = tail.length + 1`
-#. §1: `(my_map f tail).length = tail.length`
-#. §2: `ih`
-#. §3: `exact ih`
-#: Game.Levels.TheDataCenter.L02_SafeMapping
-msgid "Now the goal looks like §0.\n"
-"We know §1 from §2.\n"
-"Use §3 to finish the proof."
 msgstr ""
 
 #. §0: `¬P`
@@ -172,7 +179,7 @@ msgid "The OR Gate"
 msgstr ""
 
 #. §0: `L`
-#. §1: `induction L with head tail ih`
+#. §1: `induction L`
 #: Game.Levels.TheDataCenter.L01_MapId
 msgid "We need to prove this for *any* list §0. This suggests induction.\n"
 "Type §1."
@@ -180,6 +187,10 @@ msgstr ""
 
 #: Game.Levels.LogicForEngineers.L04_AndElim
 msgid "AND is commutative: P ∧ Q implies Q ∧ P."
+msgstr ""
+
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "Data Integration"
 msgstr ""
 
 #: Game.Levels.LogicForEngineers.L05_OrIntro
@@ -245,19 +256,25 @@ msgid "Excellent! You've completed your first proof.\n"
 "Let's move on to something more interesting!"
 msgstr ""
 
+#. §0: `L1`
+#. §1: `my_append [] L2`
+#. §2: `L2`
+#. §3: `[].length`
+#. §4: `L2.length = 0 + L2.length`
+#. §5: `simp [my_append]`
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "Base Case: §0 is empty.\n"
+"§1 is just §2.\n"
+"And §3 is 0.\n"
+"So we need to prove §4.\n"
+"This is true by definition and basic arithmetic.\n"
+"Type §5."
+msgstr ""
+
 #. §0: `P ∨ Q`
 #. §1: `intro h`
 #: Game.Levels.LogicForEngineers.L06_OrElim
 msgid "First, assume §0 is true using §1."
-msgstr ""
-
-#. §0: `my_map id []`
-#. §1: `[]`
-#. §2: `rfl`
-#: Game.Levels.TheDataCenter.L01_MapId
-msgid "Base Case: §0.\n"
-"By definition, this is §1.\n"
-"Type §2."
 msgstr ""
 
 #: Game.Levels.LogicForEngineers.L09_Iff
@@ -285,6 +302,16 @@ msgid "# Query Optimization: The Distributive Law\n"
 "This is a classic query optimization technique!\n"
 "\n"
 "Your task: Prove to the intern that this optimization is safe (logically equivalent)."
+msgstr ""
+
+#. §0: `(my_append tail L2).length + 1 = tail.length + 1 + L2.length`
+#. §1: `ih`
+#. §2: `(my_append tail L2).length = tail.length + L2.length`
+#. §3: `rw [ih]`
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "Now we have §0.\n"
+"The Induction Hypothesis §1 says §2.\n"
+"Use §3 to use this fact."
 msgstr ""
 
 #. §0: `P ↔ Q`
@@ -377,12 +404,38 @@ msgstr ""
 msgid "Query Optimization"
 msgstr ""
 
+#. §0: `my_map id []`
+#. §1: `[]`
+#. §2: `rfl`
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "Base Case: §0.\n"
+"By definition, this is §1.\n"
+"This is true by definition (reflexivity).\n"
+"Type §2."
+msgstr ""
+
 #: Game.Levels.TheDataCenter.L01_MapId
 msgid "The Identity Crisis"
 msgstr ""
 
 #: Game.Levels.LogicForEngineers.L07_NotGate
 msgid "From P and ¬P, we can prove anything."
+msgstr ""
+
+#. §0: `id head :: my_map id tail`
+#. §1: `id head = head`
+#. §2: `id`
+#. §3: `my_map id tail = tail`
+#. §4: `ih`
+#. §5: `head :: tail = head :: tail`
+#. §6: `ih`
+#. §7: `rw [ih]`
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "Now we have §0.\n"
+"We know §1 (by definition of §2) and §3 (by §4).\n"
+"So the goal is §5.\n"
+"Use the induction hypothesis §6 to rewrite the goal.\n"
+"Type §7."
 msgstr ""
 
 #. §0: `trivial`
@@ -429,12 +482,21 @@ msgstr ""
 msgid "Case Analysis on OR"
 msgstr ""
 
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "**Integration Successful!**\n"
+"\n"
+"You've verified that our data merge operation is safe.\n"
+"The total record count is preserved.\n"
+"\n"
+"You are becoming a master of structural induction!"
+msgstr ""
+
 #: Game.Levels.LogicForEngineers.L07_NotGate
 msgid "The NOT Gate"
 msgstr ""
 
 #. §0: `L`
-#. §1: `induction L with head tail ih`
+#. §1: `induction L`
 #: Game.Levels.TheDataCenter.L02_SafeMapping
 msgid "Just like in the previous level, we need to prove this for *any* list §0.\n"
 "This is a job for induction!\n"
@@ -517,6 +579,12 @@ msgid "You have both §0 and §1.\n"
 "Use §7 to derive any proposition from False!"
 msgstr ""
 
+#. §0: `simp [Nat.add_assoc, Nat.add_comm]`
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "Now both sides are equal (by associativity and commutativity of addition).\n"
+"Type §0."
+msgstr ""
+
 #. §0: `True`
 #. §1: `∧`
 #. §2: `∨`
@@ -579,6 +647,16 @@ msgstr ""
 #: Game.Levels.LogicForEngineers.L06_OrElim
 msgid "In this case, Q is true (you have §0). You need §1.\n"
 "Since you have Q, use §2 then §3."
+msgstr ""
+
+#. §0: `L1`
+#. §1: `head :: tail`
+#. §2: `my_append`
+#. §3: `simp [my_append]`
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "Recursive Case: §0 is §1.\n"
+"Simplify using the definition of §2.\n"
+"Type §3."
 msgstr ""
 
 #. §0: `h : P`
@@ -683,6 +761,32 @@ msgid "You have §0. Extract the common filter §1 with §2 and the join §3 wit
 "Use §5 to handle the two branches of the join."
 msgstr ""
 
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "Prove that appending two lists sums their lengths."
+msgstr ""
+
+#. §0: ```lean
+#. def my_append (L1 L2 : List α) : List α :=
+#.   match L1 with
+#.   | [] => L2
+#.   | (h :: t) => h :: (my_append t L2)
+#. ```
+#. §1: `length (my_append L1 L2) = length L1 + length L2`
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "# Data Integration: Append Length\n"
+"\n"
+"We are merging two datasets. The intern wrote a function to append one list to another.\n"
+"We need to verify that the length of the combined list is the sum of the original lengths.\n"
+"\n"
+"If this invariant is violated, we might have data loss or corruption during the merge.\n"
+"\n"
+"**The Code:**\n"
+"§0\n"
+"\n"
+"**Your Task:**\n"
+"Prove that §1."
+msgstr ""
+
 #. §0: `True`
 #. §1: `⊢`
 #. §2: `True`
@@ -726,14 +830,14 @@ msgid "In this case, we are in the right branch (R). Build the optimized right s
 "Use §1 then §2."
 msgstr ""
 
+#: Game.Levels.TheDataCenter
+msgid "The Data Center"
+msgstr ""
+
 #. §0: `intro h`
 #. §1: `P ∧ Q`
 #: Game.Levels.LogicForEngineers.L04_AndElim
 msgid "First, use §0 to assume §1 is true."
-msgstr ""
-
-#: Game.Levels.TheDataCenter
-msgid "The Data Center"
 msgstr ""
 
 #. §0: `P ∧ Q`
@@ -759,6 +863,10 @@ msgid "# Extracting from AND\n"
 msgstr ""
 
 #: Game
+msgid "Learn propositional logic through digital circuit intuition. Master AND, OR, NOT gates as logical proofs!"
+msgstr ""
+
+#: Game
 msgid "# Welcome to Logic for Engineers!\n"
 "\n"
 "Learn formal logic through the lens of digital circuits.\n"
@@ -769,10 +877,6 @@ msgid "# Welcome to Logic for Engineers!\n"
 "- **The Data Center**: Verify data structures and prevent memory leaks\n"
 "\n"
 "Select a world to begin your journey into formal proofs!"
-msgstr ""
-
-#: Game
-msgid "Learn propositional logic through digital circuit intuition. Master AND, OR, NOT gates as logical proofs!"
 msgstr ""
 
 #: GameServer.RpcHandlers
@@ -805,21 +909,6 @@ msgstr ""
 #: Game.Levels.LogicForEngineers.L08_DeMorgan
 msgid "You have §0 and §1.\n"
 "Extract Q from hpq with §2, then apply ¬Q to it."
-msgstr ""
-
-#. §0: `id head :: my_map id tail`
-#. §1: `id head = head`
-#. §2: `id`
-#. §3: `my_map id tail = tail`
-#. §4: `ih`
-#. §5: `head :: tail = head :: tail`
-#. §6: `exact ih`
-#. §7: `rfl`
-#: Game.Levels.TheDataCenter.L01_MapId
-msgid "Now we have §0.\n"
-"We know §1 (by definition of §2) and §3 (by §4).\n"
-"So the goal is §5.\n"
-"Type §6 or just §7."
 msgstr ""
 
 #: Game.Levels.TheDataCenter
