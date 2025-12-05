@@ -305,9 +305,9 @@ msgid "# Query Optimization: The Distributive Law\n"
 msgstr ""
 
 #. §0: `(my_append tail L2).length + 1 = tail.length + 1 + L2.length`
-#. §1: `ih`
+#. §1: `tail_ih`
 #. §2: `(my_append tail L2).length = tail.length + L2.length`
-#. §3: `rw [ih]`
+#. §3: `rw [tail_ih]`
 #: Game.Levels.TheDataCenter.L03_AppendLength
 msgid "Now we have §0.\n"
 "The Induction Hypothesis §1 says §2.\n"

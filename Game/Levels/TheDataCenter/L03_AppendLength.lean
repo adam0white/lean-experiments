@@ -50,15 +50,15 @@ So we need to prove `L2.length = 0 + L2.length`.
 This is true by definition and basic arithmetic.
 Type `simp [my_append]`."
     simp [my_append]
-  | cons head tail ih =>
+  | cons head tail tail_ih =>
     Hint "Recursive Case: `L1` is `head :: tail`.
 Simplify using the definition of `my_append`.
 Type `simp [my_append]`."
     simp [my_append]
     Hint "Now we have `(my_append tail L2).length + 1 = tail.length + 1 + L2.length`.
-The Induction Hypothesis `ih` says `(my_append tail L2).length = tail.length + L2.length`.
-Use `rw [ih]` to use this fact."
-    rw [ih]
+The Induction Hypothesis `tail_ih` says `(my_append tail L2).length = tail.length + L2.length`.
+Use `rw [tail_ih]` to use this fact."
+    rw [tail_ih]
     Hint "Now both sides are equal (by associativity and commutativity of addition).
 Type `simp [Nat.add_assoc, Nat.add_comm]`."
     simp [Nat.add_assoc, Nat.add_comm]
@@ -75,3 +75,4 @@ You are becoming a master of structural induction!
 end L03
 
 NewTactic induction simp rfl rw
+NewTheorem Nat.add_assoc Nat.add_comm
