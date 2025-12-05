@@ -12,6 +12,10 @@ msgstr "Project-Id-Version: Game v4.23.0\n"
 msgid "The XNOR Gate"
 msgstr ""
 
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "Prove that reversing a list does not change its length."
+msgstr ""
+
 #: GameServer.RpcHandlers
 msgid "intermediate goal solved! 🎉"
 msgstr ""
@@ -61,6 +65,17 @@ msgstr ""
 #: Game.Levels.LogicForEngineers.L04_AndElim
 msgid "You need to prove §0. You have §1.\n"
 "Use §2 to extract Q from the AND."
+msgstr ""
+
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "Backup Restoration"
+msgstr ""
+
+#. §0: `length [head]`
+#. §1: `simp`
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "Now simplify the arithmetic. §0 is 1.\n"
+"Type §1."
 msgstr ""
 
 #. §0: `hp : P`
@@ -364,6 +379,13 @@ msgid "Wonderful! You've shown that biconditional is symmetric.\n"
 "In circuits, XNOR is the 'equality detector' - it's HIGH when both inputs match!"
 msgstr ""
 
+#. §0: `f`
+#. §1: `g`
+#. §2: `g ∘ f`
+#: Game.Levels.TheDataCenter.L04_MapComp
+msgid "Prove that mapping §0 then §1 is the same as mapping §2."
+msgstr ""
+
 #. §0: `P → Q`
 #. §1: `P → P`
 #. §2: `P → Q`
@@ -388,6 +410,14 @@ msgid "# Implication: If...Then\n"
 "When you have exactly what you need to prove, use §7 to finish."
 msgstr ""
 
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "**Restoration Verified!**\n"
+"\n"
+"The reverse operation is length-preserving.\n"
+"No data records were lost during the restoration process.\n"
+"The 'The Data Center' is now fully verified and operational!"
+msgstr ""
+
 #: Game.Levels.LogicForEngineers.L03_AndIntro
 msgid "The AND Gate"
 msgstr ""
@@ -398,6 +428,13 @@ msgstr ""
 #: Game.Levels.LogicForEngineers.L10_Distributive
 msgid "In this case, we are in the left branch (Q). Build the optimized left side §0.\n"
 "Use §1 then §2."
+msgstr ""
+
+#: Game.Levels.TheDataCenter.L04_MapComp
+msgid "**Optimization Verified!**\n"
+"\n"
+"The compiler can now safely fuse these loops.\n"
+"You've saved the company millions of CPU cycles!"
 msgstr ""
 
 #: Game.Levels.LogicForEngineers.L10_Distributive
@@ -472,6 +509,17 @@ msgstr ""
 msgid "Prove that True is true."
 msgstr ""
 
+#. §0: `length (my_reverse tail) + length [head]`
+#. §1: `tail_ih`
+#. §2: `length (my_reverse tail)`
+#. §3: `length tail`
+#. §4: `rw [tail_ih]`
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "Now we have §0.\n"
+"Use the induction hypothesis §1 to replace §2 with §3.\n"
+"Type §4."
+msgstr ""
+
 #. §0: `P`
 #. §1: `exact h.left`
 #: Game.Levels.LogicForEngineers.L04_AndElim
@@ -493,6 +541,14 @@ msgstr ""
 
 #: Game.Levels.LogicForEngineers.L07_NotGate
 msgid "The NOT Gate"
+msgstr ""
+
+#. §0: `my_map`
+#. §1: `rfl`
+#: Game.Levels.TheDataCenter.L04_MapComp
+msgid "Base Case: Empty list.\n"
+"§0 of empty is empty.\n"
+"Type §1."
 msgstr ""
 
 #. §0: `L`
@@ -526,6 +582,14 @@ msgstr ""
 #. §1: `exact h.mp`
 #: Game.Levels.LogicForEngineers.L09_Iff
 msgid "You need §0. Use §1."
+msgstr ""
+
+#. §0: `L`
+#. §1: `induction L`
+#: Game.Levels.TheDataCenter.L04_MapComp
+msgid "We need to prove this for any list §0.\n"
+"Induction is your friend.\n"
+"Type §1."
 msgstr ""
 
 #. §0: `¬P`
@@ -585,6 +649,23 @@ msgid "Now both sides are equal (by associativity and commutativity of addition)
 "Type §0."
 msgstr ""
 
+#. §0: `rfl`
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "Base Case: Reversing an empty list gives empty.\n"
+"Type §0."
+msgstr ""
+
+#. §0: `length (my_append ... ...)`
+#. §1: `length`
+#. §2: `my_append`
+#. §3: `rw [append_length]`
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "We have §0.\n"
+"We proved in Level 3 that §1 distributes over §2.\n"
+"We can use that theorem!\n"
+"Type §3."
+msgstr ""
+
 #. §0: `True`
 #. §1: `∧`
 #. §2: `∨`
@@ -612,6 +693,14 @@ msgid "# Welcome to Logic for Engineers!\n"
 "- Level 10: Query Optimization - database efficiency\n"
 "\n"
 "Let's start with something simple and build up to proving real logic identities!"
+msgstr ""
+
+#. §0: `head :: tail`
+#. §1: `simp [my_map, tail_ih]`
+#: Game.Levels.TheDataCenter.L04_MapComp
+msgid "Recursive Case: §0.\n"
+"Simplify using definitions and the induction hypothesis.\n"
+"Type §1."
 msgstr ""
 
 #. §0: `¬(P ∧ Q)`
@@ -805,6 +894,12 @@ msgid "# Welcome to Logic for Engineers!\n"
 "Use the §3 tactic to prove something that is... trivially true!"
 msgstr ""
 
+#. §0: `induction L`
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "Induction is the standard tool for lists.\n"
+"Type §0."
+msgstr ""
+
 #. §0: `ih`
 #. §1: `(my_map f tail).length = tail.length`
 #. §2: `(my_map f (head :: tail)).length = (head :: tail).length`
@@ -911,6 +1006,27 @@ msgid "You have §0 and §1.\n"
 "Extract Q from hpq with §2, then apply ¬Q to it."
 msgstr ""
 
+#. §0: ```lean
+#. def my_map (f : α → β) (L : List α) : List β :=
+#.   match L with
+#.   | [] => []
+#.   | (head :: tail) => f head :: my_map f tail
+#. ```
+#. §1: `my_map g (my_map f L) = my_map (g ∘ f) L`
+#: Game.Levels.TheDataCenter.L04_MapComp
+msgid "# The Optimizer\n"
+"\n"
+"The compiler team has noticed that we are iterating over lists twice when we could do it once.\n"
+"Merging two passes into one is a classic optimization called **Map Fusion**.\n"
+"\n"
+"**The Code:**\n"
+"§0\n"
+"\n"
+"**Your Task:**\n"
+"Prove that §1.\n"
+"This justifies the compiler rewriting the code to be more efficient!"
+msgstr ""
+
 #: Game.Levels.TheDataCenter
 msgid "# Welcome to The Data Center\n"
 "\n"
@@ -927,6 +1043,7 @@ msgstr ""
 #. §1: `my_map`
 #. §2: `simp [my_map]`
 #: Game.Levels.TheDataCenter.L01_MapId
+#: Game.Levels.TheDataCenter.L05_ReverseLength
 msgid "Recursive Case: §0.\n"
 "Simplify using the definition of §1.\n"
 "Type §2."
@@ -972,6 +1089,10 @@ msgid "**Code Review Passed!**\n"
 "\n"
 "You've just used **Mathematical Induction** to verify software correctness.\n"
 "This is the power of formal methods in engineering!"
+msgstr ""
+
+#: Game.Levels.TheDataCenter.L04_MapComp
+msgid "The Optimizer"
 msgstr ""
 
 #. §0: `cases h with | inl hp => ... | inr hq => ...`
@@ -1029,6 +1150,33 @@ msgstr ""
 
 #: Game.Levels.TheDataCenter.L02_SafeMapping
 msgid "Prove that mapping a function over a list does not change its length."
+msgstr ""
+
+#. §0: ```lean
+#. def my_reverse (L : List α) : List α :=
+#.   match L with
+#.   | [] => []
+#.   | (h :: t) => my_append (my_reverse t) [h]
+#. ```
+#. §1: `(my_reverse L).length = L.length`
+#. §2: `append_length`
+#. §3: `length (my_append A B) = length A + length B`
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "# Backup Restoration: Reverse Stream\n"
+"\n"
+"We need to verify the integrity of our backup restoration process.\n"
+"The backup text stream is read in reverse order (stack-based storage).\n"
+"We must ensure that reversing the data stream doesn't lose any records.\n"
+"\n"
+"**The Code:**\n"
+"§0\n"
+"\n"
+"**Your Task:**\n"
+"Prove that §1.\n"
+"\n"
+"**Tip:**\n"
+"You can use the result from Level 3: §2.\n"
+"Recall: §3."
 msgstr ""
 
 #: Game.Levels.LogicForEngineers.L01_TrueIsTrue

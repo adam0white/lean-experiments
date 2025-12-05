@@ -1,6 +1,8 @@
 import Game.Levels.TheDataCenter.L01_MapId
 import Game.Levels.TheDataCenter.L02_SafeMapping
 import Game.Levels.TheDataCenter.L03_AppendLength
+import Game.Levels.TheDataCenter.L04_MapComp
+import Game.Levels.TheDataCenter.L05_ReverseLength
 
 World "TheDataCenter"
 Title "The Data Center"
