@@ -38,17 +38,17 @@ def my_map (f : α → β) (L : List α) : List β :=
 /-- Prove that mapping `f` then `g` is the same as mapping `g ∘ f`. -/
 Statement map_comp (f : α → β) (g : β → γ) (L : List α) :
   my_map g (my_map f L) = my_map (g ∘ f) L := by
-  Hint "We need to prove this for any list `L`.
+  Hint (hidden := true) "We need to prove this for any list `L`.
 Induction is your friend.
 Type `induction L`."
   induction L with
   | nil =>
-    Hint "Base Case: Empty list.
+    Hint (hidden := true) "Base Case: Empty list.
 `my_map` of empty is empty.
 Type `rfl`."
     rfl
   | cons head tail tail_ih =>
-    Hint "Recursive Case: `head :: tail`.
+    Hint (hidden := true) "Recursive Case: `head :: tail`.
 Simplify using definitions and the induction hypothesis.
 Type `simp [my_map, tail_ih]`."
     simp [my_map, tail_ih]

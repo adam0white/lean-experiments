@@ -41,22 +41,22 @@ def my_map (f : α → β) : List α → List β
 /-- Prove that mapping a function over a list does not change its length. -/
 Statement map_preserves_length (f : α → β) (L : List α) :
   (my_map f L).length = L.length := by
-  Hint "Just like in the previous level, we need to prove this for *any* list `L`.
+  Hint (hidden := true) "Just like in the previous level, we need to prove this for *any* list `L`.
 This is a job for induction!
 Type `induction L`."
   induction L with
   | nil =>    -- Base case: Empty list
-    Hint "Base Case: The list is empty. `my_map` returns empty, and length is 0.
+    Hint (hidden := true) "Base Case: The list is empty. `my_map` returns empty, and length is 0.
 This should be true by definition. Type `rfl`."
     rfl       -- "Reflexivity" (0 = 0)
   | cons head tail ih =>  -- Recursive case
-    Hint "Recursive Case: We have a head and a tail.
+    Hint (hidden := true) "Recursive Case: We have a head and a tail.
 The Induction Hypothesis `ih` says: `(my_map f tail).length = tail.length`.
 We want to prove: `(my_map f (head :: tail)).length = (head :: tail).length`.
 
 First, simplify the goal using the definition of `my_map`. Type `simp [my_map]`."
     simp [my_map]         -- Simplify using the definition
-    Hint "Now the goal looks like `(my_map f tail).length + 1 = tail.length + 1`.
+    Hint (hidden := true) "Now the goal looks like `(my_map f tail).length + 1 = tail.length + 1`.
 We know `(my_map f tail).length = tail.length` from `ih`.
 Use `rw [ih]` to replace the left side with the right side."
     rw [ih]              -- Use the "Induction Hypothesis"

@@ -37,21 +37,21 @@ def my_map (f : α → β) : List α → List β
 /-- Prove that mapping the identity function returns the original list. -/
 Statement map_id (L : List α) :
   my_map id L = L := by
-  Hint "We need to prove this for *any* list `L`. This suggests induction.
+  Hint (hidden := true) "We need to prove this for *any* list `L`. This suggests induction.
 Type `induction L`."
   induction L with
   | nil =>
-    Hint "Base Case: `my_map id []`.
+    Hint (hidden := true) "Base Case: `my_map id []`.
 By definition, this is `[]`.
 This is true by definition (reflexivity).
 Type `rfl`."
     rfl
   | cons head tail ih =>
-    Hint "Recursive Case: `my_map id (head :: tail)`.
+    Hint (hidden := true) "Recursive Case: `my_map id (head :: tail)`.
 Simplify using the definition of `my_map`.
 Type `simp [my_map]`."
     simp [my_map]
-    Hint "Now we have `id head :: my_map id tail`.
+    Hint (hidden := true) "Now we have `id head :: my_map id tail`.
 We know `id head = head` (by definition of `id`) and `my_map id tail = tail` (by `ih`).
 So the goal is `head :: tail = head :: tail`.
 Use the induction hypothesis `ih` to rewrite the goal.

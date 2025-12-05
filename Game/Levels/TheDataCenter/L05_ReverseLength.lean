@@ -45,28 +45,28 @@ def my_reverse (L : List α) : List α :=
 /-- Prove that reversing a list does not change its length. -/
 Statement reverse_length (L : List α) :
   (my_reverse L).length = L.length := by
-  Hint "Induction is the standard tool for lists.
+  Hint (hidden := true) "Induction is the standard tool for lists.
 Type `induction L`."
   induction L with
   | nil =>
-    Hint "Base Case: Reversing an empty list gives empty.
+    Hint (hidden := true) "Base Case: Reversing an empty list gives empty.
 Type `rfl`."
     rfl
   | cons head tail tail_ih =>
-    Hint "Recursive Case: `head :: tail`.
+    Hint (hidden := true) "Recursive Case: `head :: tail`.
 Simplify using the definition of `my_reverse`.
 Type `simp [my_reverse]`."
     simp [my_reverse]
-    Hint "We have `length (my_append ... ...)`.
+    Hint (hidden := true) "We have `length (my_append ... ...)`.
 We proved in Level 3 that `length` distributes over `my_append`.
 We can use that theorem!
 Type `rw [append_length]`."
     rw [append_length]
-    Hint "Now we have `length (my_reverse tail) + length [head]`.
+    Hint (hidden := true) "Now we have `length (my_reverse tail) + length [head]`.
 Use the induction hypothesis `tail_ih` to replace `length (my_reverse tail)` with `length tail`.
 Type `rw [tail_ih]`."
     rw [tail_ih]
-    Hint "Now simplify the arithmetic. `length [head]` is 1.
+    Hint (hidden := true) "Now simplify the arithmetic. `length [head]` is 1.
 Type `simp`."
     simp
 
