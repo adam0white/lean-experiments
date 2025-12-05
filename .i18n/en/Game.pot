@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.23.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-04\n"
+"POT-Creation-Date: 2025-12-05\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -10,6 +10,23 @@ msgstr "Project-Id-Version: Game v4.23.0\n"
 
 #: Game.Levels.LogicForEngineers.L09_Iff
 msgid "The XNOR Gate"
+msgstr ""
+
+#. §0: `my_map`
+#. §1: `(my_map f L).length = L.length`
+#: Game.Levels.TheDataCenter.L02_SafeMapping
+msgid "# Ticket-1042: Buffer Overflow Check\n"
+"\n"
+"**Status:** OPEN\n"
+"**Priority:** P0 (Security)\n"
+"\n"
+"**Description:**\n"
+"The security team is worried about buffer overflows.\n"
+"We need to verify that §0 allocates exactly the same amount of memory as the input list.\n"
+"If the length changes, we might write out of bounds.\n"
+"\n"
+"**Acceptance Criteria:**\n"
+"Prove that §1."
 msgstr ""
 
 #: Game.Levels.TheDataCenter.L05_ReverseLength
@@ -65,10 +82,6 @@ msgstr ""
 #: Game.Levels.LogicForEngineers.L04_AndElim
 msgid "You need to prove §0. You have §1.\n"
 "Use §2 to extract Q from the AND."
-msgstr ""
-
-#: Game.Levels.TheDataCenter.L05_ReverseLength
-msgid "Backup Restoration"
 msgstr ""
 
 #. §0: `length [head]`
@@ -204,41 +217,12 @@ msgstr ""
 msgid "AND is commutative: P ∧ Q implies Q ∧ P."
 msgstr ""
 
-#: Game.Levels.TheDataCenter.L03_AppendLength
-msgid "Data Integration"
-msgstr ""
-
 #: Game.Levels.LogicForEngineers.L05_OrIntro
 msgid "Now just prove P using your hypothesis."
 msgstr ""
 
 #: Game.Levels.TheDataCenter.L02_SafeMapping
 msgid "Safe Mapping"
-msgstr ""
-
-#. §0: `map`
-#. §1: ```lean
-#. def my_map (f : α → β) : List α → List β
-#. | [] => []
-#. | (h :: t) => (f h) :: (my_map f t)
-#. ```
-#. §2: `my_map`
-#: Game.Levels.TheDataCenter.L02_SafeMapping
-msgid "# The Memory Leak: Safe Mapping\n"
-"\n"
-"Great job verifying the identity property!\n"
-"Now for the real challenge.\n"
-"\n"
-"The junior engineer implemented a custom §0 function for our high-performance list processing library.\n"
-"However, there's a concern that it might be corrupting memory by changing the size of the list during transformation.\n"
-"\n"
-"If the output list length doesn't match the input list length, we get a buffer overflow in the C++ backend.\n"
-"\n"
-"**The Code:**\n"
-"§1\n"
-"\n"
-"**Your Task:**\n"
-"Perform a formal code review. Prove that §2 preserves the length of the list."
 msgstr ""
 
 #. §0: `P ∨ Q`
@@ -259,6 +243,27 @@ msgid "# OR: At Least One Must Be True\n"
 "- Use §4 if you can prove §5\n"
 "\n"
 "You're essentially choosing which input to connect to HIGH."
+msgstr ""
+
+#. §0: `my_map`
+#. §1: `id`
+#. §2: `my_map id L`
+#. §3: `L`
+#. §4: `my_map id L = L`
+#. §5: `L`
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "# Ticket-1041: Pipeline Integrity\n"
+"\n"
+"**Status:** OPEN\n"
+"**Priority:** P1\n"
+"\n"
+"**Description:**\n"
+"We are defining a §0 function to transform data streams.\n"
+"Before we deploy, we need to guarantee that mapping the §1 (identity) function acts as a no-op.\n"
+"If §2 changes the list §3, we have a major bug in our pipeline.\n"
+"\n"
+"**Acceptance Criteria:**\n"
+"Prove that §4 for any list §5."
 msgstr ""
 
 #. §0: `trivial`
@@ -286,10 +291,18 @@ msgid "Base Case: §0 is empty.\n"
 "Type §5."
 msgstr ""
 
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "Ticket-1045: Backup Integrity Check"
+msgstr ""
+
 #. §0: `P ∨ Q`
 #. §1: `intro h`
 #: Game.Levels.LogicForEngineers.L06_OrElim
 msgid "First, assume §0 is true using §1."
+msgstr ""
+
+#: Game.Levels.TheDataCenter.L04_MapComp
+msgid "Ticket-1044: Optimization Pass Safety"
 msgstr ""
 
 #: Game.Levels.LogicForEngineers.L09_Iff
@@ -430,6 +443,10 @@ msgid "In this case, we are in the left branch (Q). Build the optimized left sid
 "Use §1 then §2."
 msgstr ""
 
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "Ticket-1043: Merge Logic Verification"
+msgstr ""
+
 #: Game.Levels.TheDataCenter.L04_MapComp
 msgid "**Optimization Verified!**\n"
 "\n"
@@ -449,10 +466,6 @@ msgid "Base Case: §0.\n"
 "By definition, this is §1.\n"
 "This is true by definition (reflexivity).\n"
 "Type §2."
-msgstr ""
-
-#: Game.Levels.TheDataCenter.L01_MapId
-msgid "The Identity Crisis"
 msgstr ""
 
 #: Game.Levels.LogicForEngineers.L07_NotGate
@@ -666,6 +679,33 @@ msgid "We have §0.\n"
 "Type §3."
 msgstr ""
 
+#. §0: `map g (map f L)`
+#. §1: `map (g ∘ f) L`
+#. §2: ```lean
+#. def my_map (f : α → β) (L : List α) : List β :=
+#.   match L with
+#.   | [] => []
+#.   | (head :: tail) => f head :: my_map f tail
+#. ```
+#. §3: `my_map g (my_map f L) = my_map (g ∘ f) L`
+#: Game.Levels.TheDataCenter.L04_MapComp
+msgid "# Ticket-1044: Optimization Pass Safety\n"
+"\n"
+"**Status:** IN REVIEW\n"
+"**Priority:** P2 (Performance)\n"
+"\n"
+"**Description:**\n"
+"The compiler team wants to enable 'Map Fusion' optimization.\n"
+"They claim that §0 is equivalent to §1.\n"
+"We need to mathematically prove this optimization is safe before enabling it in production.\n"
+"\n"
+"**The Code:**\n"
+"§2\n"
+"\n"
+"**Acceptance Criteria:**\n"
+"Prove that §3."
+msgstr ""
+
 #. §0: `True`
 #. §1: `∧`
 #. §2: `∨`
@@ -804,29 +844,6 @@ msgstr ""
 msgid "Logic for Engineers Game"
 msgstr ""
 
-#. §0: `my_map`
-#. §1: `id`
-#. §2: ```lean
-#. def my_map (f : α → β) : List α → List β
-#. | [] => []
-#. | (h :: t) => (f h) :: (my_map f t)
-#. ```
-#. §3: `my_map id L = L`
-#: Game.Levels.TheDataCenter.L01_MapId
-msgid "# The Identity Crisis\n"
-"\n"
-"Before we tackle the memory leak, we need to verify the basics of our §0 function.\n"
-"The simplest property is that mapping the identity function §1 over a list should return the same list.\n"
-"\n"
-"If this fails, our map function is fundamentally broken.\n"
-"\n"
-"**The Code:**\n"
-"§2\n"
-"\n"
-"**Your Task:**\n"
-"Prove that §3."
-msgstr ""
-
 #. §0: `constructor`
 #. §1: `Q ∧ P`
 #: Game.Levels.LogicForEngineers.L04_AndElim
@@ -852,28 +869,6 @@ msgstr ""
 
 #: Game.Levels.TheDataCenter.L03_AppendLength
 msgid "Prove that appending two lists sums their lengths."
-msgstr ""
-
-#. §0: ```lean
-#. def my_append (L1 L2 : List α) : List α :=
-#.   match L1 with
-#.   | [] => L2
-#.   | (h :: t) => h :: (my_append t L2)
-#. ```
-#. §1: `length (my_append L1 L2) = length L1 + length L2`
-#: Game.Levels.TheDataCenter.L03_AppendLength
-msgid "# Data Integration: Append Length\n"
-"\n"
-"We are merging two datasets. The intern wrote a function to append one list to another.\n"
-"We need to verify that the length of the combined list is the sum of the original lengths.\n"
-"\n"
-"If this invariant is violated, we might have data loss or corruption during the merge.\n"
-"\n"
-"**The Code:**\n"
-"§0\n"
-"\n"
-"**Your Task:**\n"
-"Prove that §1."
 msgstr ""
 
 #. §0: `True`
@@ -974,6 +969,37 @@ msgid "# Welcome to Logic for Engineers!\n"
 "Select a world to begin your journey into formal proofs!"
 msgstr ""
 
+#. §0: `my_reverse`
+#. §1: ```lean
+#. def my_reverse (L : List α) : List α :=
+#.   match L with
+#.   | [] => []
+#.   | (h :: t) => my_append (my_reverse t) [h]
+#. ```
+#. §2: `(my_reverse L).length = L.length`
+#. §3: `append_length`
+#: Game.Levels.TheDataCenter.L05_ReverseLength
+msgid "# Ticket-1045: Backup Integrity Check\n"
+"\n"
+"**Status:** BLOCKED\n"
+"**Priority:** P0 (Critical)\n"
+"\n"
+"**Description:**\n"
+"Our backups are stored as reverse-ordered stacks on tape drives.\n"
+"During restoration, we read the tape in reverse to reconstruct the database.\n"
+"You must verify that the §0 operation preserves the total number of records.\n"
+"Any discrepancy here means data loss.\n"
+"\n"
+"**The Code:**\n"
+"§1\n"
+"\n"
+"**Acceptance Criteria:**\n"
+"Prove that §2.\n"
+"\n"
+"**Tip:**\n"
+"Consult the knowledge base: Ticket-1043 (§3)."
+msgstr ""
+
 #: GameServer.RpcHandlers
 msgid "level completed! 🎉"
 msgstr ""
@@ -1004,39 +1030,6 @@ msgstr ""
 #: Game.Levels.LogicForEngineers.L08_DeMorgan
 msgid "You have §0 and §1.\n"
 "Extract Q from hpq with §2, then apply ¬Q to it."
-msgstr ""
-
-#. §0: ```lean
-#. def my_map (f : α → β) (L : List α) : List β :=
-#.   match L with
-#.   | [] => []
-#.   | (head :: tail) => f head :: my_map f tail
-#. ```
-#. §1: `my_map g (my_map f L) = my_map (g ∘ f) L`
-#: Game.Levels.TheDataCenter.L04_MapComp
-msgid "# The Optimizer\n"
-"\n"
-"The compiler team has noticed that we are iterating over lists twice when we could do it once.\n"
-"Merging two passes into one is a classic optimization called **Map Fusion**.\n"
-"\n"
-"**The Code:**\n"
-"§0\n"
-"\n"
-"**Your Task:**\n"
-"Prove that §1.\n"
-"This justifies the compiler rewriting the code to be more efficient!"
-msgstr ""
-
-#: Game.Levels.TheDataCenter
-msgid "# Welcome to The Data Center\n"
-"\n"
-"You've mastered the logic gates. Now it's time to touch the metal.\n"
-"In this world, you will apply your logical skills to verify actual data structures.\n"
-"\n"
-"We are moving from Propositional Logic (True/False) to Functional Programming (Lists, Recursion).\n"
-"\n"
-"**Your Goal:**\n"
-"Prevent the next major outage by formally verifying critical system functions."
 msgstr ""
 
 #. §0: `my_map id (head :: tail)`
@@ -1091,8 +1084,30 @@ msgid "**Code Review Passed!**\n"
 "This is the power of formal methods in engineering!"
 msgstr ""
 
-#: Game.Levels.TheDataCenter.L04_MapComp
-msgid "The Optimizer"
+#. §0: `my_append`
+#. §1: ```lean
+#. def my_append (L1 L2 : List α) : List α :=
+#.   match L1 with
+#.   | [] => L2
+#.   | (h :: t) => h :: my_append t L2
+#. ```
+#. §2: `length (my_append L1 L2) = length L1 + length L2`
+#: Game.Levels.TheDataCenter.L03_AppendLength
+msgid "# Ticket-1043: Merge Logic Verification\n"
+"\n"
+"**Status:** OPEN\n"
+"**Priority:** P1\n"
+"\n"
+"**Description:**\n"
+"We are implementing a §0 function to merge data shards.\n"
+"Data Integrity checks require that the total record count matches the sum of the two shards.\n"
+"If records are lost during the merge, we will fail our audit.\n"
+"\n"
+"**The Code:**\n"
+"§1\n"
+"\n"
+"**Acceptance Criteria:**\n"
+"Prove that §2."
 msgstr ""
 
 #. §0: `cases h with | inl hp => ... | inr hq => ...`
@@ -1148,35 +1163,30 @@ msgid "Here you can put additional information about the game. It is accessible\
 "Use **markdown**."
 msgstr ""
 
+#: Game.Levels.TheDataCenter
+msgid "# ⚠️ SEV-1: Data Consistency Check\n"
+"\n"
+"**Status:** INVESTIGATING\n"
+"**Assignee:** Senior Engineer (You)\n"
+"**Context:** The Core Infrastructure Team is migrating our user database to a functional architecture.\n"
+"\n"
+"**The Incident:**\n"
+"Management is afraid the new recursive algorithms might cause data loss or buffer overflows during the migration. Unit tests are passing, but that's not good enough for the banking module.\n"
+"\n"
+"**Your Orders:**\n"
+"1. Enter the Data Center.\n"
+"2. Formally verify the list operations.\n"
+"3. **Prove** that the data remains intact.\n"
+"\n"
+"> \"We don't need tests. We need proofs.\" - The CTO"
+msgstr ""
+
 #: Game.Levels.TheDataCenter.L02_SafeMapping
 msgid "Prove that mapping a function over a list does not change its length."
 msgstr ""
 
-#. §0: ```lean
-#. def my_reverse (L : List α) : List α :=
-#.   match L with
-#.   | [] => []
-#.   | (h :: t) => my_append (my_reverse t) [h]
-#. ```
-#. §1: `(my_reverse L).length = L.length`
-#. §2: `append_length`
-#. §3: `length (my_append A B) = length A + length B`
-#: Game.Levels.TheDataCenter.L05_ReverseLength
-msgid "# Backup Restoration: Reverse Stream\n"
-"\n"
-"We need to verify the integrity of our backup restoration process.\n"
-"The backup text stream is read in reverse order (stack-based storage).\n"
-"We must ensure that reversing the data stream doesn't lose any records.\n"
-"\n"
-"**The Code:**\n"
-"§0\n"
-"\n"
-"**Your Task:**\n"
-"Prove that §1.\n"
-"\n"
-"**Tip:**\n"
-"You can use the result from Level 3: §2.\n"
-"Recall: §3."
+#: Game.Levels.TheDataCenter.L01_MapId
+msgid "Ticket-1041: Pipeline Integrity"
 msgstr ""
 
 #: Game.Levels.LogicForEngineers.L01_TrueIsTrue

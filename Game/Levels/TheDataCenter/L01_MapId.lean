@@ -5,25 +5,21 @@ Level 1
 
 namespace L01
 
-Title "The Identity Crisis"
+Title "Ticket-1041: Pipeline Integrity"
 
 Introduction "
-# The Identity Crisis
+# Ticket-1041: Pipeline Integrity
 
-Before we tackle the memory leak, we need to verify the basics of our `my_map` function.
-The simplest property is that mapping the identity function `id` over a list should return the same list.
+**Status:** OPEN
+**Priority:** P1
 
-If this fails, our map function is fundamentally broken.
+**Description:**
+We are defining a `my_map` function to transform data streams.
+Before we deploy, we need to guarantee that mapping the `id` (identity) function acts as a no-op.
+If `my_map id L` changes the list `L`, we have a major bug in our pipeline.
 
-**The Code:**
-```lean
-def my_map (f : α → β) : List α → List β
-| [] => []
-| (h :: t) => (f h) :: (my_map f t)
-```
-
-**Your Task:**
-Prove that `my_map id L = L`.
+**Acceptance Criteria:**
+Prove that `my_map id L = L` for any list `L`.
 "
 
 variable {α : Type}

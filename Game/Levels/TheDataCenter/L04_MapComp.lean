@@ -5,13 +5,18 @@ Level 4
 
 namespace L04
 
-Title "The Optimizer"
+Title "Ticket-1044: Optimization Pass Safety"
 
 Introduction "
-# The Optimizer
+# Ticket-1044: Optimization Pass Safety
 
-The compiler team has noticed that we are iterating over lists twice when we could do it once.
-Merging two passes into one is a classic optimization called **Map Fusion**.
+**Status:** IN REVIEW
+**Priority:** P2 (Performance)
+
+**Description:**
+The compiler team wants to enable 'Map Fusion' optimization.
+They claim that `map g (map f L)` is equivalent to `map (g ∘ f) L`.
+We need to mathematically prove this optimization is safe before enabling it in production.
 
 **The Code:**
 ```lean
@@ -21,9 +26,8 @@ def my_map (f : α → β) (L : List α) : List β :=
   | (head :: tail) => f head :: my_map f tail
 ```
 
-**Your Task:**
+**Acceptance Criteria:**
 Prove that `my_map g (my_map f L) = my_map (g ∘ f) L`.
-This justifies the compiler rewriting the code to be more efficient!
 "
 
 variable {α β γ : Type}

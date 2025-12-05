@@ -8,13 +8,19 @@ World "TheDataCenter"
 Title "The Data Center"
 
 Introduction "
-# Welcome to The Data Center
+# ⚠️ SEV-1: Data Consistency Check
 
-You've mastered the logic gates. Now it's time to touch the metal.
-In this world, you will apply your logical skills to verify actual data structures.
+**Status:** INVESTIGATING
+**Assignee:** Senior Engineer (You)
+**Context:** The Core Infrastructure Team is migrating our user database to a functional architecture.
 
-We are moving from Propositional Logic (True/False) to Functional Programming (Lists, Recursion).
+**The Incident:**
+Management is afraid the new recursive algorithms might cause data loss or buffer overflows during the migration. Unit tests are passing, but that's not good enough for the banking module.
 
-**Your Goal:**
-Prevent the next major outage by formally verifying critical system functions.
+**Your Orders:**
+1. Enter the Data Center.
+2. Formally verify the list operations.
+3. **Prove** that the data remains intact.
+
+> \"We don't need tests. We need proofs.\" - The CTO
 "

@@ -8,14 +8,19 @@ namespace L05
 
 open L03 (my_append append_length)
 
-Title "Backup Restoration"
+Title "Ticket-1045: Backup Integrity Check"
 
 Introduction "
-# Backup Restoration: Reverse Stream
+# Ticket-1045: Backup Integrity Check
 
-We need to verify the integrity of our backup restoration process.
-The backup text stream is read in reverse order (stack-based storage).
-We must ensure that reversing the data stream doesn't lose any records.
+**Status:** BLOCKED
+**Priority:** P0 (Critical)
+
+**Description:**
+Our backups are stored as reverse-ordered stacks on tape drives.
+During restoration, we read the tape in reverse to reconstruct the database.
+You must verify that the `my_reverse` operation preserves the total number of records.
+Any discrepancy here means data loss.
 
 **The Code:**
 ```lean
@@ -25,12 +30,11 @@ def my_reverse (L : List α) : List α :=
   | (h :: t) => my_append (my_reverse t) [h]
 ```
 
-**Your Task:**
+**Acceptance Criteria:**
 Prove that `(my_reverse L).length = L.length`.
 
 **Tip:**
-You can use the result from Level 3: `append_length`.
-Recall: `length (my_append A B) = length A + length B`.
+Consult the knowledge base: Ticket-1043 (`append_length`).
 "
 
 variable {α : Type}

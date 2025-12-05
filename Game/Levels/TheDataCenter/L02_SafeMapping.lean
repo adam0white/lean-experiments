@@ -8,25 +8,18 @@ namespace L02
 Title "Safe Mapping"
 
 Introduction "
-# The Memory Leak: Safe Mapping
+# Ticket-1042: Buffer Overflow Check
 
-Great job verifying the identity property!
-Now for the real challenge.
+**Status:** OPEN
+**Priority:** P0 (Security)
 
-The junior engineer implemented a custom `map` function for our high-performance list processing library.
-However, there's a concern that it might be corrupting memory by changing the size of the list during transformation.
+**Description:**
+The security team is worried about buffer overflows.
+We need to verify that `my_map` allocates exactly the same amount of memory as the input list.
+If the length changes, we might write out of bounds.
 
-If the output list length doesn't match the input list length, we get a buffer overflow in the C++ backend.
-
-**The Code:**
-```lean
-def my_map (f : α → β) : List α → List β
-| [] => []
-| (h :: t) => (f h) :: (my_map f t)
-```
-
-**Your Task:**
-Perform a formal code review. Prove that `my_map` preserves the length of the list.
+**Acceptance Criteria:**
+Prove that `(my_map f L).length = L.length`.
 "
 
 variable {α β : Type}

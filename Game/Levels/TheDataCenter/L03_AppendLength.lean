@@ -5,15 +5,18 @@ Level 3
 
 namespace L03
 
-Title "Data Integration"
+Title "Ticket-1043: Merge Logic Verification"
 
 Introduction "
-# Data Integration: Append Length
+# Ticket-1043: Merge Logic Verification
 
-We are merging two datasets. The intern wrote a function to append one list to another.
-We need to verify that the length of the combined list is the sum of the original lengths.
+**Status:** OPEN
+**Priority:** P1
 
-If this invariant is violated, we might have data loss or corruption during the merge.
+**Description:**
+We are implementing a `my_append` function to merge data shards.
+Data Integrity checks require that the total record count matches the sum of the two shards.
+If records are lost during the merge, we will fail our audit.
 
 **The Code:**
 ```lean
@@ -23,7 +26,7 @@ def my_append (L1 L2 : List α) : List α :=
   | (h :: t) => h :: (my_append t L2)
 ```
 
-**Your Task:**
+**Acceptance Criteria:**
 Prove that `length (my_append L1 L2) = length L1 + length L2`.
 "
 
